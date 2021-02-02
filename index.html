@@ -23,10 +23,46 @@
             function computerPlay() {
 
                 const computerOptions = [`Rock`, `Paper`, `Scissors`]
-
                 let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
                 return randomAnswer;
             }
+
+
+
+            // need to convert this method to take input from people. For now we're getting the logic of 2 comoputers playing against each other. 
+
+            function playerPlay() {
+
+                const computerOptions = [`Rock`, `Paper`, `Scissors`]
+                let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+                return randomAnswer;
+
+
+            }
+
+
+            function playRound(playerSelection, computerSelection) {
+                
+            // converting answers to lowercase strings for consistent comparison    
+                let lowercasePlayer = playerSelection.tolowerCase();
+                let lowercaseComputer = computerSelection.tolowerCase();
+                
+
+                if lowercasePlayer == lowercaseComputer {
+                    return `You Tied this round!`;
+                } else if {
+                    lowercasePlayer == lowercaseComputer
+                }
+
+
+
+
+
+
+            }
+
+
+
 
             console.log(computerPlay());
 
