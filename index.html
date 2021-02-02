@@ -44,14 +44,20 @@
             function playRound(playerSelection, computerSelection) {
                 
             // converting answers to lowercase strings for consistent comparison    
-                let lowercasePlayer = playerSelection.tolowerCase();
-                let lowercaseComputer = computerSelection.tolowerCase();
-                
+                // let lowercasePlayer = playerSelection.tolowerCase();
+                // let lowercaseComputer = computerSelection.tolowerCase();
 
-                if lowercasePlayer == lowercaseComputer {
+                // return lowercaseComputer;
+
+                // ***Need to convert strings to lowercase for camparison
+
+                if (playerSelection === computerSelection) {
                     return `You Tied this round!`;
-                } else if {
-                    lowercasePlayer == lowercaseComputer
+
+                }   else if (playerSelection === `Rock` && computerSelection === `Scissors`) {
+                    return `You win! Rock beats Scissors`;
+
+                    
                 }
 
 
@@ -64,7 +70,7 @@
 
 
 
-            console.log(computerPlay());
+            console.log(playRound(`Rock`, `Scissors`));
 
         </script>
     </body>
