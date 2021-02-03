@@ -22,7 +22,7 @@
 
             function computerPlay() {
 
-                const computerOptions = [`Rock`, `Paper`, `Scissors`]
+                const computerOptions = [`rock`, `paper`, `scissors`]
                 let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
                 return randomAnswer;
             }
@@ -35,7 +35,7 @@
 
                 const computerOptions = [`Rock`, `Paper`, `Scissors`]
                 let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
-                return randomAnswer;
+                return randomAnswer.toLowerCase();
 
 
             }
@@ -54,12 +54,31 @@
                 if (playerSelection === computerSelection) {
                     return `You Tied this round!`;
 
-                }   else if (playerSelection === `Rock` && computerSelection === `Scissors`) {
+                }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
                     return `You win! Rock beats Scissors`;
+                
 
-                    
+                }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
+                    return `You lose! Rock beats Scissors`;
+                
+
+                }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
+                    return `You lose! Scissors beats paper`;
+                
+
+                }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
+                    return `You win! Scissors beats Paper`;
                 }
 
+                
+                else if (playerSelection === `rock` && computerSelection === `paper`) {
+                    return `You lose! Paper beats Rock`;
+                }
+
+
+                else if (playerSelection === `paper` && computerSelection === `rock`) {
+                    return `You win! Paper beats Rock`;
+                }
 
 
 
@@ -70,7 +89,7 @@
 
 
 
-            console.log(playRound(`Rock`, `Scissors`));
+            console.log(playRound(playerPlay(), computerPlay()));
 
         </script>
     </body>
