@@ -10,94 +10,30 @@
         <title></title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
+        <link rel="stylesheet" href="styles.css">
+        <script type = "text/javascript" src="main.js"></script>  
+
     </head>
     <body> 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-        <script >
+            <div class="main-container">
+                <div class="button-column">
+                    <!-- <div class="rock-button"><button type="button">ROCK</button></div> -->
+                    <button class="rock-button" type="button">ROCK</button>
+                    <button class="paper-button" type="button">PAPER</button>
+                    <button class="scissors-button" type="button">SCISSORS</button>
+                </div>
+                <div class="score-container">
+                    <div class="player-score"></div>
+                    <div class="computer-score"></div>
+                </div>
+            </div>
 
 
-            function computerPlay() {
-
-                const computerOptions = [`rock`, `paper`, `scissors`]
-                let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
-                return randomAnswer;
-            }
-
-            // need to convert this method to take input from people. For now we're getting the logic of 2 comoputers playing against each other. 
-
-            function playerPlay() {
-
-                const computerOptions = [`Rock`, `Paper`, `Scissors`]
-
-                let randomAnswer = prompt(`Enter rock, paper, or scissors:`);
-                return randomAnswer.toLowerCase();
-            }
 
 
-           
-            let computerScore = 0;
-            let playerScore = 0;
-            let i = 0;
-
-            function playRound(playerSelection, computerSelection) {
-               
-                if (playerSelection === computerSelection) {
-                    return `You tied this round!`;
-                    
-                }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
-                    playerScore++;   
-                    return `You win! Rock beats Scissors`;
-
-                }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
-                    computerScore++;   
-                    return `You lose! Rock beats Scissors`;
-                
-
-                }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
-                    computerScore++;   
-                    return `You lose! Scissors beats paper`;
-                
-
-                }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
-                    playerScore++;     
-                    return `You win! Scissors beats Paper`;
-                }
-                
-                else if (playerSelection === `rock` && computerSelection === `paper`) {
-                    computerScore++;   
-                    return `You lose! Paper beats Rock`;
-                }
-
-
-                else if (playerSelection === `paper` && computerSelection === `rock`) {
-                    playerScore++;   
-                    return `You win! Paper beats Rock`;
-                }
-            }
-
-            
-
-            function play() {
-                    playRound();
-                    i++;
-                    console.log(playRound(playerPlay(), computerPlay()));
-                    console.log(`Computer score: ${computerScore}`);
-                    console.log(`Your score: ${playerScore}`);
-
-                    if (i !==3) {
-                        play();
-
-                    } else {
-                    console.log(`GAME OVER`);
-                    }
-                }
-
-            
-        play();
-        </script>
     </body>
 </html>
