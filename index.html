@@ -32,7 +32,7 @@
             function playerPlay() {
 
                 const computerOptions = [`Rock`, `Paper`, `Scissors`]
-                let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+                let randomAnswer = prompt(`Enter rock, paper, or scissors:`);
                 return randomAnswer.toLowerCase();
             }
 
