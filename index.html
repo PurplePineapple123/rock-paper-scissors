@@ -32,6 +32,7 @@
             function playerPlay() {
 
                 const computerOptions = [`Rock`, `Paper`, `Scissors`]
+
                 let randomAnswer = prompt(`Enter rock, paper, or scissors:`);
                 return randomAnswer.toLowerCase();
             }
@@ -87,13 +88,16 @@
                     console.log(`Computer score: ${computerScore}`);
                     console.log(`Your score: ${playerScore}`);
 
-                    while (i !==5) {
+                    if (i !==3) {
                         play();
+
+                    } else {
+                    console.log(`GAME OVER`);
                     }
-                    return(`game over`);
                 }
+
             
-        
+        play();
         </script>
     </body>
 </html>
