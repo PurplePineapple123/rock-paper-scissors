@@ -1,4 +1,4 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -12,7 +12,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="">
     </head>
-    <body>
+    <body> 
         <!--[if lt IE 7]>
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -27,8 +27,6 @@
                 return randomAnswer;
             }
 
-
-
             // need to convert this method to take input from people. For now we're getting the logic of 2 comoputers playing against each other. 
 
             function playerPlay() {
@@ -36,60 +34,196 @@
                 const computerOptions = [`Rock`, `Paper`, `Scissors`]
                 let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
                 return randomAnswer.toLowerCase();
-
-
             }
 
 
+           
+           
+           
+            let computerScore = 0;
+            let playerScore = 0;
+            let i = 0;
+
+           while (i !==5) {
             function playRound(playerSelection, computerSelection) {
-                
-            // converting answers to lowercase strings for consistent comparison    
-                // let lowercasePlayer = playerSelection.tolowerCase();
-                // let lowercaseComputer = computerSelection.tolowerCase();
-
-                // return lowercaseComputer;
-
-                // ***Need to convert strings to lowercase for camparison
-
+               
                 if (playerSelection === computerSelection) {
-                    return `You Tied this round!`;
-
+                    return `You tied this round!`;
+                    
                 }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
+                    playerScore++;   
                     return `You win! Rock beats Scissors`;
-                
 
                 }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
+                    computerScore++;   
                     return `You lose! Rock beats Scissors`;
                 
 
                 }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
+                    computerScore++;   
                     return `You lose! Scissors beats paper`;
                 
 
                 }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
+                    playerScore++;     
                     return `You win! Scissors beats Paper`;
                 }
-
                 
                 else if (playerSelection === `rock` && computerSelection === `paper`) {
+                    computerScore++;   
                     return `You lose! Paper beats Rock`;
                 }
 
 
                 else if (playerSelection === `paper` && computerSelection === `rock`) {
+                    playerScore++;   
                     return `You win! Paper beats Rock`;
                 }
-
-
-
-
+            }
+            i++;
+            console.log(playRound(playerPlay(), computerPlay()));
+            console.log(`Computer score: ${computerScore}`);
+            console.log(`Your score: ${playerScore}`);
 
             }
 
+            
+        
 
 
 
-            console.log(playRound(playerPlay(), computerPlay()));
+
+
+            
+
+
+
+
+
+
+
+
+
+
+
+            // // full function on a loop until score is increased to 5 (first to 5 wins)
+
+            
+            // function game() {
+            //     let computerScore = 0;
+            //     let playerScore = 0;
+                
+            //     while (computerScore < 4 || playerScore < 4) {
+
+
+            // function playRound() {
+            //     const playerSelection = playerPlay();
+            //     const computerSelection = computerPlay();
+
+            //     if (playerSelection === computerSelection) {
+            //         return `You tied this round!`;
+
+            //     }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
+            //         playerScore++;
+            //         return `You win! Rock beats Scissors`;
+                
+
+            //     }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
+            //         computerScore++;
+            //         return `You lose! Rock beats Scissors`;
+                
+
+            //     }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
+            //         computerScore++;
+            //         return `You lose! Scissors beats paper`;
+                
+
+            //     }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
+            //         playerScore++;
+            //         return `You win! Scissors beats Paper`;
+            //     }
+
+                
+            //     else if (playerSelection === `rock` && computerSelection === `paper`) {
+            //         computerScore++;
+            //         return `You lose! Paper beats Rock`;
+            //     }
+
+
+            //     else if (playerSelection === `paper` && computerSelection === `rock`) {
+            //         playerScore++;
+            //         return `You win! Paper beats Rock`;
+            //     }
+
+            // }
+            //     }
+            // }
+
+
+
+
+
+
+
+
+        // function game() {
+
+
+        //     //  Computer chooses a random option
+        //     function computerPlay() {
+        //         const computerOptions = [`rock`, `paper`, `scissors`]
+        //         let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+        //         return randomAnswer;
+        //     }
+
+        //     //Player chooses a random option (needs to be changed slightly)
+        //     function playerPlay() {
+        //         const computerOptions = [`Rock`, `Paper`, `Scissors`]
+        //         let randomAnswer = computerOptions[Math.floor(Math.random() * computerOptions.length)];
+        //         return randomAnswer.toLowerCase();
+        //     }       
+            
+            
+
+        //     function playRound() {
+        //         let playerSelection = playerPlay();
+        //         let computerSelection = computerPlay();
+
+        //             if (playerSelection === computerSelection) {
+        //             return `You tied this round!`;
+
+        //         }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
+        //             return `You win! Rock beats Scissors`;
+                
+
+        //         }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
+        //             return `You lose! Rock beats Scissors`;
+                
+
+        //         }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
+        //             return `You lose! Scissors beats paper`;
+                
+
+        //         }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
+        //             return `You win! Scissors beats Paper`;
+        //         }
+
+                
+        //         else if (playerSelection === `rock` && computerSelection === `paper`) {
+        //             return `You lose! Paper beats Rock`;
+        //         }
+
+
+        //         else if (playerSelection === `paper` && computerSelection === `rock`) {
+        //             return `You win! Paper beats Rock`;
+        //         }
+
+        //     }
+
+
+        // }
+
+        // console.log(game());
 
         </script>
     </body>
