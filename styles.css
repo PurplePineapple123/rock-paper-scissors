@@ -115,6 +115,7 @@ table {
     display: inline-flex;
     background-color: green;
     width: 100px;
+    text-align: center;
 
 }
 

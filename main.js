@@ -19,11 +19,11 @@
             //group all buttons together and return value as a string
 
             function button(e) { 
-                const btn = document.getElementById(`button[id="${e}"]`)
+                const btn = document.getElementById(`button[id="${e}"]`);
                 if (e.target.id === `rock` || e.target.id === `paper` || e.target.id === `scissors`) {
                     console.log(e.target.id);
                     
-                    etar = e.target.id
+                    etar = e.target.id;
                     test = computerPlay();
 
                     playRound(etar, test);
@@ -35,9 +35,26 @@
             }
 
 
+            function trackScore(playerScore) {
+                //player score tracking
+                const playerResults = document.getElementsByClassName(`player-score`)[0];
+                let node = document.createTextNode(`${playerScore}`);
+                playerResults.appendChild(node);
+
+                 //computer score tracking
+                 const computerResults = document.getElementsByClassName(`computer-score`)[0];
+                 let nodeTwo = document.createTextNode(`${computerScore}`);
+                 computerResults.appendChild(nodeTwo);
+
+
+
+            }
+
+
+
 
             function playRound(playerSelection, computerSelection) {
-               
+
                 if (playerSelection === computerSelection) {
                      
                     console.log(`You tied this round!`);
@@ -45,29 +62,34 @@
 
                 }   else if (playerSelection === `rock` && computerSelection === `scissors`) {
                     playerScore++;   
+                    trackScore(playerScore);
                     console.log (`You win! Rock beats Scissors`);
                     return (`You win! Rock beats Scissors`);
 
                 }   else if (playerSelection === `scissors` && computerSelection === `rock`) {
                     computerScore++;   
+                    trackScore(computerScore);
                     console.log (`You lose! Rock beats Scissors`);
                     return (`You lose! Rock beats Scissors`);
 
                 }   else if (playerSelection === `paper` && computerSelection === `scissors`) {
                     computerScore++;   
+                    trackScore(computerScore);
                     console.log (`You lose! Scissors beats paper`);
                     return (`You lose! Scissors beats paper`);
 
 
                 }   else if (playerSelection === `scissors` && computerSelection === `paper`) {
                     playerScore++;     
+                    trackScore(playerScore);
                     console.log (`You win! Scissors beats Paper`);
                     return (`You win! Scissors beats Paper`);
 
                 }
                 
                 else if (playerSelection === `rock` && computerSelection === `paper`) {
-                    computerScore++;   
+                    computerScore++;  
+                    trackScore(computerScore); 
                     console.log (`You lose! Paper beats Rock`);
                     return (`You lose! Paper beats Rock`);
 
@@ -76,10 +98,13 @@
 
                 else if (playerSelection === `paper` && computerSelection === `rock`) {
                     playerScore++;   
+                    trackScore(playerScore);
                     console.log (`You win! Paper beats Rock`);
                     return (`You win! Paper beats Rock`);
 
                 }
+
+
             }
 
             
