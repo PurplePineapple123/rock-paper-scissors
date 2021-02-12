@@ -25,7 +25,7 @@
                     
                     etar = e.target.id;
                     test = computerPlay();
-
+                    
                     playRound(etar, test);
                     i++;
                     console.log(i);
@@ -35,16 +35,35 @@
             }
 
 
+           function playerUniformTally (playerScore) {
+
+                let foo = document.getElementById(`score-tally`).innerHTML;
+                foo = playerScore;
+                document.getElementById(`score-tally`).innerHTML = foo;
+
+           }
+
+           function computerUniformTally (computerScore) {
+
+                let foo = document.getElementById(`computer-score-tally`).innerHTML;
+                foo = computerScore;
+                document.getElementById(`computer-score-tally`).innerHTML = foo;
+
+            }   
+           
+           
+           
+           
             function trackScore(playerScore) {
-                //player score tracking
-                const playerResults = document.getElementsByClassName(`player-score`)[0];
-                let node = document.createTextNode(`${playerScore}`);
-                playerResults.appendChild(node);
+                
+                
+                playerUniformTally(playerScore);
+                computerUniformTally(computerScore);
 
                  //computer score tracking
-                 const computerResults = document.getElementsByClassName(`computer-score`)[0];
-                 let nodeTwo = document.createTextNode(`${computerScore}`);
-                 computerResults.appendChild(nodeTwo);
+                //  const computerResults = document.getElementsByClassName(`computer-score`)[0];
+                //  let nodeTwo = document.createTextNode(`${computerScore}`);
+                //  computerResults.appendChild(nodeTwo);
 
 
 
@@ -130,28 +149,3 @@
         // play();
 
 
-
-
-
-
-
-
-           //button presses 
-
-            // const rockButton = document.querySelector(`#rock`);
-            // rockButton.addEventListener('click', playRound
-            // });
-
-
-
-            // const paperButton = document.querySelector(`#paper`);
-            // paperButton.addEventListener('click', function(e){
-            //     console.log(`paper`);
-            //     return(`paper`);
-            // });
-
-            // const scissorsButton = document.querySelector(`#scissors`);
-            // scissorsButton.addEventListener('click', function(e){
-            //     console.log(`scissors`);
-            //     return(`scissors`);
-            // });
