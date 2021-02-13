@@ -113,8 +113,9 @@ table {
 
 .player-score {
     display: inline-flex;
+    flex-direction: column;
     background-color: green;
-    width: 100px;
+    width: 140px;
     text-align: center;
 
 }
@@ -123,6 +124,41 @@ table {
 .computer-score {
     display: inline-flex;
     background-color: purple;
-    width: 100px;
+    width: 140px;
+    flex-direction: column;
 
+
+}
+
+#computer-score-tally {
+    margin: auto;
+    font-size: 25px;
+}
+
+#score-tally {
+    margin: auto;
+    font-size: 25px;
+
+}
+
+#your-score {
+    margin: auto;
+}
+
+
+#computer-score {
+    margin: auto;
+}
+
+#score-text-container {
+    display: inline-flex;
+    background-color: beige;
+    margin-top: 2%;
+    margin-right: auto;
+    margin-left: auto; 
+}
+
+#score-text {
+    margin: auto;
+    font-size: 25px;
 }

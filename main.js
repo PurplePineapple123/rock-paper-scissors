@@ -17,11 +17,14 @@
                     etar = e.target.id;
                     test = computerPlay();
                     
-                    
+                if (computerScore !== 5 && playerScore !== 5)  {
                     playRound(etar, test);
                     i++;
-                    console.log(i);
-
+                } else if (computerScore === 5){
+                    console.log(`The Computer Wins!`)
+                } else if (playerScore === 5){
+                    console.log(`You Win!`)
+                }
                 }
 
             }
@@ -57,50 +60,75 @@
             }   
 
 
+
+            //Output by text the result of the round
+
+            function textTally(textResult) {
+                let foo = document.getElementById(`score-text`).innerHTML;
+                foo = textResult;
+                document.getElementById(`score-text`).innerHTML = foo;
+
+            }
+
+
             //Logic for comparing each round to determine a winner.
             function playRound(playerSelection, computerSelection) {
 
                 if (playerSelection === computerSelection) {
                      
-                    console.log(`You tied this round!`);
-                    return(`You tied this round!`)
+                    textTally(`You tied! Both you and the computer chose ${playerSelection}`);
+
+                    //console.log(`You tied this round!`);
+                    //return(`You tied this round!`)
 
                 }else if (playerSelection === `rock` && computerSelection === `scissors`) {
                     playerScore++;   
                     playerUniformTally(playerScore);
-                    console.log (`You win! Rock beats Scissors`);
-                    return (`You win! Rock beats Scissors`);
+                    textTally(`You win! Rock beats Scissors`);
+
+                   // console.log (`You win! Rock beats Scissors`);
+                    //return (`You win! Rock beats Scissors`);
 
                 }else if (playerSelection === `scissors` && computerSelection === `rock`) {
                     computerScore++;   
                     computerUniformTally(computerScore);
-                    console.log (`You lose! Rock beats Scissors`);
-                    return (`You lose! Rock beats Scissors`);
+                    textTally(`You lose! Rock beats Scissors`);
+
+                    //console.log (`You lose! Rock beats Scissors`);
+                    //return (`You lose! Rock beats Scissors`);
 
                 }else if (playerSelection === `paper` && computerSelection === `scissors`) {
                     computerScore++;   
                     computerUniformTally(computerScore);
-                    console.log (`You lose! Scissors beats paper`);
-                    return (`You lose! Scissors beats paper`);
+                    textTally(`You lose! Scissors beats paper`);
+
+                    //console.log (`You lose! Scissors beats paper`);
+                    //return (`You lose! Scissors beats paper`);
 
 
                 }else if (playerSelection === `scissors` && computerSelection === `paper`) {
                     playerScore++;     
                     playerUniformTally(playerScore);
-                    console.log (`You win! Scissors beats Paper`);
-                    return (`You win! Scissors beats Paper`);
+                    textTally(`You win! Scissors beats Paper`);
+
+                    // console.log (`You win! Scissors beats Paper`);
+                    // return (`You win! Scissors beats Paper`);
 
                 }else if (playerSelection === `rock` && computerSelection === `paper`) {
                     computerScore++;  
                     computerUniformTally(computerScore); 
-                    console.log (`You lose! Paper beats Rock`);
-                    return (`You lose! Paper beats Rock`);
+                    textTally(`You lose! Paper beats Rock`);
+
+                    //console.log (`You lose! Paper beats Rock`);
+                    //return (`You lose! Paper beats Rock`);
 
                 }else if (playerSelection === `paper` && computerSelection === `rock`) {
                     playerScore++;   
                     playerUniformTally(playerScore);
-                    console.log (`You win! Paper beats Rock`);
-                    return (`You win! Paper beats Rock`);
+                    textTally(`You win! Paper beats Rock`);
+
+                    //console.log (`You win! Paper beats Rock`);
+                    //return (`You win! Paper beats Rock`);
 
                 }
                 
