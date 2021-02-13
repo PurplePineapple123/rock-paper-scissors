@@ -56,9 +56,7 @@
                 let foo = document.getElementById(`computer-score-tally`).innerHTML;
                 foo = computerScore;
                 document.getElementById(`computer-score-tally`).innerHTML = foo;
-
             }   
-
 
 
             //Output by text the result of the round
@@ -70,6 +68,25 @@
 
             }
 
+            //output the round number the player is on
+            function roundTracker() {
+                
+                if (computerScore !== 5 && playerScore !== 5)  {
+                    let bar = document.getElementById(`round-tracker`).innerHTML;
+                    bar = `Round Number: ${i+1}`;
+                    document.getElementById(`round-tracker`).innerHTML = bar;
+
+                } else if (computerScore === 5){
+                    let bar = document.getElementById(`round-tracker`).innerHTML;
+                    bar = `THE COMPUTER WINS`;
+                    document.getElementById(`round-tracker`).innerHTML = bar;                
+                
+                } else if (playerScore === 5){
+                    let bar = document.getElementById(`round-tracker`).innerHTML;
+                    bar = `YOU WIN THE GAME`;
+                    document.getElementById(`round-tracker`).innerHTML = bar;                   }
+
+            }
 
             //Logic for comparing each round to determine a winner.
             function playRound(playerSelection, computerSelection) {
@@ -77,7 +94,7 @@
                 if (playerSelection === computerSelection) {
                      
                     textTally(`You tied! Both you and the computer chose ${playerSelection}`);
-
+                    roundTracker();
                     //console.log(`You tied this round!`);
                     //return(`You tied this round!`)
 
@@ -85,6 +102,7 @@
                     playerScore++;   
                     playerUniformTally(playerScore);
                     textTally(`You win! Rock beats Scissors`);
+                    roundTracker();
 
                    // console.log (`You win! Rock beats Scissors`);
                     //return (`You win! Rock beats Scissors`);
@@ -93,6 +111,7 @@
                     computerScore++;   
                     computerUniformTally(computerScore);
                     textTally(`You lose! Rock beats Scissors`);
+                    roundTracker();
 
                     //console.log (`You lose! Rock beats Scissors`);
                     //return (`You lose! Rock beats Scissors`);
@@ -101,6 +120,7 @@
                     computerScore++;   
                     computerUniformTally(computerScore);
                     textTally(`You lose! Scissors beats paper`);
+                    roundTracker();
 
                     //console.log (`You lose! Scissors beats paper`);
                     //return (`You lose! Scissors beats paper`);
@@ -110,6 +130,7 @@
                     playerScore++;     
                     playerUniformTally(playerScore);
                     textTally(`You win! Scissors beats Paper`);
+                    roundTracker();
 
                     // console.log (`You win! Scissors beats Paper`);
                     // return (`You win! Scissors beats Paper`);
@@ -118,6 +139,7 @@
                     computerScore++;  
                     computerUniformTally(computerScore); 
                     textTally(`You lose! Paper beats Rock`);
+                    roundTracker();
 
                     //console.log (`You lose! Paper beats Rock`);
                     //return (`You lose! Paper beats Rock`);
@@ -126,6 +148,7 @@
                     playerScore++;   
                     playerUniformTally(playerScore);
                     textTally(`You win! Paper beats Rock`);
+                    roundTracker();
 
                     //console.log (`You win! Paper beats Rock`);
                     //return (`You win! Paper beats Rock`);

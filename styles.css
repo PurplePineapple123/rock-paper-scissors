@@ -156,9 +156,17 @@ table {
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto; 
+    flex-direction: column;
+
 }
 
 #score-text {
     margin: auto;
     font-size: 25px;
+}
+
+#round-tracker {
+    margin: auto;
+    font-size: 25px;
+    margin-top: 2%;
 }
