@@ -20,12 +20,8 @@
                 if (computerScore !== 5 && playerScore !== 5)  {
                     playRound(etar, test);
                     i++;
-                } else if (computerScore === 5){
-                    console.log(`The Computer Wins!`)
-                } else if (playerScore === 5){
-                    console.log(`You Win!`)
-                }
-                }
+                } 
+            }
 
             }
 
@@ -68,6 +64,29 @@
 
             }
 
+            //play again button (reset page)
+
+            function refreshPage() {
+                window.location.reload();
+            }
+
+            //create button when game end
+
+            function newGame() {
+
+
+            }
+            
+            
+            //Reset button created, styled (called on stylesheet.css), and appeneded to div
+            
+            let resetButton = document.createElement(`button`);
+            resetButton.innerHTML = `PLAY AGAIN`;
+            resetButton.classList.add(`reset-button`);
+            let div = document.getElementById(`play-again`);
+
+
+
             //output the round number the player is on
             function roundTracker() {
                 
@@ -79,12 +98,17 @@
                 } else if (computerScore === 5){
                     let bar = document.getElementById(`round-tracker`).innerHTML;
                     bar = `THE COMPUTER WINS`;
-                    document.getElementById(`round-tracker`).innerHTML = bar;                
+                    document.getElementById(`round-tracker`).innerHTML = bar;
+                    div.appendChild(resetButton);
                 
                 } else if (playerScore === 5){
                     let bar = document.getElementById(`round-tracker`).innerHTML;
                     bar = `YOU WIN THE GAME`;
-                    document.getElementById(`round-tracker`).innerHTML = bar;                   }
+                    document.getElementById(`round-tracker`).innerHTML = bar;  
+                    div.appendChild(resetButton);
+
+                
+                }
 
             }
 
@@ -160,6 +184,9 @@
 
             }
 
+            //When reset button clicked, reset the page and scores
+
+            div.addEventListener(`click`, refreshPage);
             
 
         //play 3 rounds

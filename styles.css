@@ -49,6 +49,11 @@ table {
 
 /* begin CSS styling */
 
+p {
+
+    font-family: 'Press Start 2P', cursive;
+}
+
 
 .main-container {
     display: flex;
@@ -138,7 +143,7 @@ table {
 #score-tally {
     margin: auto;
     font-size: 25px;
-
+    
 }
 
 #your-score {
@@ -148,6 +153,7 @@ table {
 
 #computer-score {
     margin: auto;
+    text-align: center;
 }
 
 #score-text-container {
@@ -169,4 +175,14 @@ table {
     margin: auto;
     font-size: 25px;
     margin-top: 2%;
+}
+
+
+#play-again{
+    margin: auto;
+}
+
+.reset-button {
+
+
 }
