@@ -58,20 +58,38 @@ p {
 .main-container {
     display: flex;
     margin: 0;
-    background-color: aqua;
+    background-color: black;
     height: 100vh;
     flex-direction: column;
     
 }
 
+.intro-text {
+    color: white;
+    text-align: center;
+    margin-top: 6%;
+    font-family: 'Press Start 2P', cursive;
+}
+
+span {
+    opacity: 0;
+    transition: all 0.4s ease;
+    color: white;
+}
+
+span.fade{
+    opacity: 1;
+    color: red;
+
+}
 
 .button-column {
-    background-color: red;
+    /*background-color: red;*/
     width: 750px;
     height: 150px;
     margin-right: auto;
     margin-left: auto; 
-    margin-top: 12%;   
+    margin-top: 4%;   
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -80,32 +98,58 @@ p {
 
 .scissors-button {
     display: inline-flex;
-    background-color: orange;
-    width: 150px;
+    background-color: black;
+    background-image: url("images/scissors-opened-tool-shape.png");
+    background-position: center;
+    background-size: cover;    width: 150px;
     justify-content: center;
     align-items: center;
+    border: none;
+
+}
+
+.scissors-button:hover,
+.rock-button:hover,
+.paper-button:hover,
+.reset-button:hover {
+  transform: scale(1.1);
+  border-color: #ff1010;
+  box-shadow: 0 0 5rem #ff1010;
+  outline: none;
+
 }
 
 .rock-button {
     display: inline-flex;
-    background-color: blue;
+    background-color: black;
+    background-image: url("images/cave-painting.png");
+    background-position: center;
+    background-size: cover;
     width: 150px;
+    border: none;
     justify-content: center;
     align-items: center;
     
+}
+
+button:focus {
+    outline: none;
 }
 
 .paper-button {
     display: inline-flex;
-    background-color: green;
-    width: 150px;
+    background-color: black;
+    background-image: url("images/document.png");
+    background-position: center;
+    background-size: cover;    width: 150px;
     justify-content: center;
     align-items: center;
+    border: none;
+
     
 }
 
 .score-container {
-    background-color: orange;
     width: 300px;
     height: 100px;
     margin-right: auto;
@@ -114,23 +158,26 @@ p {
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    color: white;
 }
 
 .player-score {
     display: inline-flex;
     flex-direction: column;
-    background-color: green;
     width: 140px;
     text-align: center;
+    border: solid white;
+    margin-right: 3%;
 
 }
 
 
 .computer-score {
     display: inline-flex;
-    background-color: purple;
     width: 140px;
     flex-direction: column;
+    border: solid white;
+    margin-left: 3%;
 
 
 }
@@ -158,31 +205,41 @@ p {
 
 #score-text-container {
     display: inline-flex;
-    background-color: beige;
+    /*background-color: beige; */
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto; 
     flex-direction: column;
+    color: white;
 
 }
 
 #score-text {
     margin: auto;
-    font-size: 25px;
+    font-size: 20px;
+    text-align: center;
 }
 
 #round-tracker {
     margin: auto;
-    font-size: 25px;
+    font-size: 15px;
     margin-top: 2%;
 }
 
 
 #play-again{
     margin: auto;
+
 }
 
 .reset-button {
+    font-family: 'Press Start 2P', cursive;
+    background-color: white;
+    padding: 15px;
 
 
+}
+#play-again {
+    margin-top: 3%;
+    
 }

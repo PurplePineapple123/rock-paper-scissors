@@ -5,6 +5,40 @@
             document.addEventListener(`click`, button);
 
 
+            //animating initial text
+
+            const text = document.querySelector(`.intro-text`);
+            const strText = text.textContent;
+            const splitText = strText.split("");
+            text.textContent = "";
+
+            console.log(splitText);
+
+            for (let i=0; i < splitText.length; i++) {
+                text.innerHTML += "<span>"+ splitText[i] + "</span>";
+
+            }
+
+            //inserting letters one by one
+
+            let char = 0;
+            let timer = setInterval(onTick, 50);
+
+            function onTick() {
+                const span = text.querySelectorAll(`span`)[char];
+                span.classList.add(`fade`);
+                char++;
+                if(char === splitText.length){
+                    complete();
+                    return;
+                }
+            }
+
+            function complete() {
+                clearInterval(timer); //does this need to be its own function?
+                timer = null;
+            }
+
 
 
             //group all buttons together and return value as a string
@@ -69,13 +103,6 @@
             function refreshPage() {
                 window.location.reload();
             }
-
-            //create button when game end
-
-            function newGame() {
-
-
-            }
             
             
             //Reset button created, styled (called on stylesheet.css), and appeneded to div
@@ -119,17 +146,14 @@
                      
                     textTally(`You tied! Both you and the computer chose ${playerSelection}`);
                     roundTracker();
-                    //console.log(`You tied this round!`);
-                    //return(`You tied this round!`)
-
+                   
                 }else if (playerSelection === `rock` && computerSelection === `scissors`) {
                     playerScore++;   
                     playerUniformTally(playerScore);
                     textTally(`You win! Rock beats Scissors`);
                     roundTracker();
 
-                   // console.log (`You win! Rock beats Scissors`);
-                    //return (`You win! Rock beats Scissors`);
+                
 
                 }else if (playerSelection === `scissors` && computerSelection === `rock`) {
                     computerScore++;   
@@ -137,8 +161,7 @@
                     textTally(`You lose! Rock beats Scissors`);
                     roundTracker();
 
-                    //console.log (`You lose! Rock beats Scissors`);
-                    //return (`You lose! Rock beats Scissors`);
+                   
 
                 }else if (playerSelection === `paper` && computerSelection === `scissors`) {
                     computerScore++;   
@@ -146,8 +169,6 @@
                     textTally(`You lose! Scissors beats paper`);
                     roundTracker();
 
-                    //console.log (`You lose! Scissors beats paper`);
-                    //return (`You lose! Scissors beats paper`);
 
 
                 }else if (playerSelection === `scissors` && computerSelection === `paper`) {
@@ -156,8 +177,7 @@
                     textTally(`You win! Scissors beats Paper`);
                     roundTracker();
 
-                    // console.log (`You win! Scissors beats Paper`);
-                    // return (`You win! Scissors beats Paper`);
+                
 
                 }else if (playerSelection === `rock` && computerSelection === `paper`) {
                     computerScore++;  
@@ -165,17 +185,12 @@
                     textTally(`You lose! Paper beats Rock`);
                     roundTracker();
 
-                    //console.log (`You lose! Paper beats Rock`);
-                    //return (`You lose! Paper beats Rock`);
 
                 }else if (playerSelection === `paper` && computerSelection === `rock`) {
                     playerScore++;   
                     playerUniformTally(playerScore);
                     textTally(`You win! Paper beats Rock`);
                     roundTracker();
-
-                    //console.log (`You win! Paper beats Rock`);
-                    //return (`You win! Paper beats Rock`);
 
                 }
                 
@@ -188,25 +203,5 @@
 
             div.addEventListener(`click`, refreshPage);
             
-
-        //play 3 rounds
-
-        //     function play() {
-        //             playRound();
-        //             i++;
-        //             console.log(playRound(playerPlay(), computerPlay()));
-        //             console.log(`Computer score: ${computerScore}`);
-        //             console.log(`Your score: ${playerScore}`);
-
-        //             if (i !==3) {
-        //                 play();
-
-        //             } else {
-        //             console.log(`GAME OVER`);
-        //             }
-        //         }
-
-            
-        // play();
 
 
