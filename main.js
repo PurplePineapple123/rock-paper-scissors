@@ -40,7 +40,7 @@
             }
 
 
-            //add visible tag to main container div after 5 seconds (once initial text has been read)
+            //delay revel of main container
             
             function revealMainContainer() {
                 document.getElementById(`reveal`).style.visibility = `visible`;
