@@ -6,7 +6,7 @@
 
 
             //animating initial text
-
+            
             const text = document.querySelector(`.intro-text`);
             const strText = text.textContent;
             const splitText = strText.split("");
@@ -38,6 +38,23 @@
                 clearInterval(timer); //does this need to be its own function?
                 timer = null;
             }
+
+
+            //add visible tag to main container div after 5 seconds (once initial text has been read)
+            
+            function revealMainContainer() {
+                document.getElementById(`reveal`).style.visibility = `visible`;
+            } 
+            setTimeout(`revealMainContainer()`, 1000);
+            
+            
+            //hide all elements to show the end screen
+
+            function hideMainContainer() {
+                document.getElementById(`reveal`).style.visibility = `hidden`;
+                document.getElementById(`intro-text-hidden`).style.visibility = `hidden`;
+
+            } 
 
 
 
@@ -123,16 +140,20 @@
                     document.getElementById(`round-tracker`).innerHTML = bar;
 
                 } else if (computerScore === 5){
+                    hideMainContainer()
                     let bar = document.getElementById(`round-tracker`).innerHTML;
                     bar = `THE COMPUTER WINS`;
                     document.getElementById(`round-tracker`).innerHTML = bar;
                     div.appendChild(resetButton);
+
                 
                 } else if (playerScore === 5){
+                    hideMainContainer()
                     let bar = document.getElementById(`round-tracker`).innerHTML;
                     bar = `YOU WIN THE GAME`;
                     document.getElementById(`round-tracker`).innerHTML = bar;  
                     div.appendChild(resetButton);
+
 
                 
                 }

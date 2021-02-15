@@ -30,6 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
+    background-color: black;
 }
 ol, ul {
 	list-style: none;
@@ -59,8 +60,8 @@ p {
     display: flex;
     margin: 0;
     background-color: black;
-    height: 100vh;
     flex-direction: column;
+    visibility: hidden;
     
 }
 
@@ -141,10 +142,11 @@ button:focus {
     background-color: black;
     background-image: url("images/document.png");
     background-position: center;
-    background-size: cover;    width: 150px;
+    background-size: cover;   
+    width: 150px;
     justify-content: center;
     align-items: center;
-    border: none;
+    border: white;
 
     
 }
@@ -236,10 +238,15 @@ button:focus {
     font-family: 'Press Start 2P', cursive;
     background-color: white;
     padding: 15px;
-
+    margin: auto;
+    
 
 }
 #play-again {
-    margin-top: 3%;
-    
+    background-color: blanchedalmond;
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 35%;
 }
+

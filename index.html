@@ -21,10 +21,11 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
         
-            <div class="main-container">
-                <div>
-                    <h1 class="intro-text">This is the graphic intro...</h1>
-                </div>
+        <div id="intro-text-hidden" >
+            <h1 class="intro-text">This is the graphic intro...</h1>
+        </div>
+
+            <div class="main-container" id="reveal">
                 <div class="button-column">
                     <button id="rock" class="rock-button" type="button"></button>
                     <button id="paper" class="paper-button" type="button"></button>
@@ -44,10 +45,8 @@
                     <p id="score-text"></p>
                     <p class="intro-text" id="round-tracker">Chose Rock, Paper or Scissors to play a round</p>
                 </div>
-                <div id="play-again"><!--<button onclick="refreshPage()" type="button">reset</button>--></div>
             </div>
-
-
+        <div id="play-again"></div>
 
             <script type = "text/javascript" src="main.js"></script>  
 
