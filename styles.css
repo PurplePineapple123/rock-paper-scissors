@@ -81,12 +81,25 @@ p {
     }
 }
 
+.hideMain {
+    opacity: 1;
+    animation: fadeOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeOut {
+    to{
+        opacity: 0;
+    }
+}
 
 
 .intro-text {
     color: white;
     text-align: center;
     margin-top: 6%;
+    font-size: 25px;;
     font-family: 'Press Start 2P', cursive;
 }
 
@@ -103,7 +116,6 @@ span.fade{
 }
 
 .button-column {
-    /*background-color: red;*/
     width: 750px;
     height: 150px;
     margin-right: auto;
@@ -225,7 +237,6 @@ button:focus {
 
 #score-text-container {
     display: inline-flex;
-    /*background-color: beige; */
     margin-top: 2%;
     margin-right: auto;
     margin-left: auto; 
@@ -247,24 +258,46 @@ button:focus {
 }
 
 
-#play-again{
-    margin: auto;
-
-}
-
+/* Play again button animates in*/
 .reset-button {
     font-family: 'Press Start 2P', cursive;
     background-color: white;
     padding: 15px;
     margin: auto;
-    
+    animation: fadeIn;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1.5s;
 
 }
 #play-again {
-    background-color: blanchedalmond;
     display: flex;
     position: absolute;
     width: 100%;
-    top: 35%;
+    top: 45%;
 }
 
+/* text or end screen */
+.final-text {
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    margin: auto;
+    animation: fadeIn;
+    opacity: 0;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+    font-size: 30px;
+    
+}
+
+#final-text-container {
+    display: flex;
+    position: absolute;
+    width: 100%;
+    top: 33%;
+
+ 
+
+}

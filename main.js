@@ -6,7 +6,7 @@
 
 
             //animating initial text
-            
+
             const text = document.querySelector(`.intro-text`);
             const strText = text.textContent;
             const splitText = strText.split("");
@@ -18,7 +18,8 @@
                 text.innerHTML += "<span>"+ splitText[i] + "</span>";
 
             }
-
+        
+        
             //inserting letters one by one
 
             let char = 0;
@@ -38,21 +39,16 @@
                 clearInterval(timer); //does this need to be its own function?
                 timer = null;
             }
-
-
-            //delay revel of main container
             
-            function revealMainContainer() {
-                document.getElementById(`reveal`).style.visibility = `visible`;
-            } 
-            setTimeout(`revealMainContainer()`, 1000);
-            
-            
+        
             //hide all elements to show the end screen
 
             function hideMainContainer() {
-                document.getElementById(`reveal`).style.visibility = `hidden`;
-                document.getElementById(`intro-text-hidden`).style.visibility = `hidden`;
+                const hide = document.getElementById(`reveal`);
+                const hideIntro = document.getElementById(`intro-text-hidden`);
+
+                hide.classList.add(`hideMain`);
+                hideIntro.classList.add(`hideMain`);
 
             } 
 
@@ -141,17 +137,31 @@
 
                 } else if (computerScore === 5){
                     hideMainContainer()
-                    let bar = document.getElementById(`round-tracker`).innerHTML;
-                    bar = `THE COMPUTER WINS`;
-                    document.getElementById(`round-tracker`).innerHTML = bar;
+
+                    let finalText = document.createElement(`p`);
+                    finalText.textContent = `THE COMPUTER WINS`;
+                    finalText.classList.add(`final-text`);
+                   // finalText.classList.add(`.intro-text`);
+
+
+                    
+                    let textContainer = document.getElementById(`final-text-container`);
+
+                    textContainer.appendChild(finalText);
                     div.appendChild(resetButton);
 
                 
                 } else if (playerScore === 5){
                     hideMainContainer()
-                    let bar = document.getElementById(`round-tracker`).innerHTML;
-                    bar = `YOU WIN THE GAME`;
-                    document.getElementById(`round-tracker`).innerHTML = bar;  
+
+                    let finalText = document.createElement(`p`);
+                    finalText.textContent = `YOU WIN`;
+                    finalText.classList.add(`final-text`);
+                    //finalText.classList.add(`.intro-text`);
+
+                    let textContainer = document.getElementById(`final-text-container`);
+
+                    textContainer.appendChild(finalText);
                     div.appendChild(resetButton);
 
 
