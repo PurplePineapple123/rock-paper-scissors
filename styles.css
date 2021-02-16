@@ -130,7 +130,7 @@ span.fade{
 .scissors-button {
     display: inline-flex;
     background-color: black;
-    background-image: url("Images/scissors-opened-tool-shape.png");
+    background-image: url("images/scissors-opened-tool-shape.png");
     background-position: center;
     background-size: cover;    width: 150px;
     justify-content: center;
@@ -153,7 +153,7 @@ span.fade{
 .rock-button {
     display: inline-flex;
     background-color: black;
-    background-image: url("Images/cave-painting.png");
+    background-image: url("images/cave-painting.png");
     background-position: center;
     background-size: cover;
     width: 150px;
@@ -170,7 +170,7 @@ button:focus {
 .paper-button {
     display: inline-flex;
     background-color: black;
-    background-image: url("Images/document.png");
+    background-image: url("images/document.png");
     background-position: center;
     background-size: cover;   
     width: 150px;
